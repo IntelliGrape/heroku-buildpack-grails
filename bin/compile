@@ -196,8 +196,8 @@ else
     echo "Server directory found. Not copying webapp-runner.jar"
 fi
 
-rm -rf $BUILD_DIR/target/assets
-rm -rf $BUILD_DIR/target/classes
+#rm -rf $BUILD_DIR/target/assets
+#rm -rf $BUILD_DIR/target/classes
 
 PROFILE_PATH="$BUILD_DIR/.profile.d/grails.sh"
 mkdir -p $(dirname $PROFILE_PATH)
