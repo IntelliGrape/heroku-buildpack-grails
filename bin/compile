@@ -97,6 +97,11 @@ if [ ! -d $CACHE_DIR ] ; then
   mkdir $CACHE_DIR
 fi
 
+if [ ! -d ${BUILD_DIR}/Procfile ] ; then
+  echo "-----> No Procfile Found. Checking Procfile.$SERVER_HOST_NAME"
+  mv Procfile.${SERVER_HOST_NAME} Procfile
+fi
+
 # create default system.properties 
 if [ ! -f ${BUILD_DIR}/system.properties ]; then
   echo "java.runtime.version=1.6" > ${BUILD_DIR}/system.properties
