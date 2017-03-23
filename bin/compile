@@ -99,7 +99,7 @@ fi
 
 if [ ! -d ${BUILD_DIR}/Procfile ] ; then
   echo "-----> No Procfile Found. Checking Procfile.$SERVER_HOST_NAME"
-  mv Procfile.${SERVER_HOST_NAME} Procfile
+  mv ${BUILD_DIR}/Procfile.${SERVER_HOST_NAME} ${BUILD_DIR}/Procfile
 fi
 
 # create default system.properties 
