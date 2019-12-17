@@ -20,9 +20,11 @@ echo $ENV_DIR
 # source in common functions
 . $BIN_DIR/common.sh
 #curl --silent --location http://heroku-jvm-common.s3.amazonaws.com/jvm-buildpack-common.tar.gz | tar xz
-curl --silent --location https://codon-buildpacks.s3.amazonaws.com/buildpacks/heroku/jvm-common.tgz | tar xz
-. bin/java
-. bin/util
+#curl --silent --location https://codon-buildpacks.s3.amazonaws.com/buildpacks/heroku/jvm-common.tgz | tar xz
+# fixed to prevent issues with code upgrade
+curl --silent --location https://github.com/heroku/heroku-buildpack-jvm-common/archive/v51.tar.gz | tar xz
+. ./heroku-buildpack-jvm-common-51/bin/java
+. ./heroku-buildpack-jvm-common-51/bin/util
 
 export_env_dir $ENV_DIR
 
